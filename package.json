@@ -7,19 +7,27 @@
     "predeploy": "rm -rf build & npm run build",
     "deploy": "gh-pages -d public",
     "dev": "parcel -p 7000 --open",
-    "build": "parcel build"
+    "build": "parcel build",
+    "typecheck": "npx tsc",
+    "checkformat": "prettier --check \"**/*.{js,jsx,ts,tsx,json}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@types/node": "^18.11.10",
+    "@types/node": "^18.11.15",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
     "classnames": "^2.3.2",
-    "eslint": "^8.25.0",
+    "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.11",
     "gh-pages": "^4.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "parcel": "^2.7.0",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.1.1",
@@ -47,5 +55,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,jsx,ts,tsx,json}": "prettier --write"
   }
 }

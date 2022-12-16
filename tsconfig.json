@@ -15,7 +15,10 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2016",
+    "target": "ES5",
+    "removeComments": true,
+    "outDir": "js",
+    "sourceMap": true,
     "types": ["node"]
   }
 }

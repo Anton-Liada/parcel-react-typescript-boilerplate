@@ -5,10 +5,9 @@
   "source": "public/index.html",
   "scripts": {
     "predeploy": "rm -rf build & npm run build",
-    "deploy": "gh-pages -d public",
+    "deploy": "gh-pages -d build",
     "dev": "parcel -p 7000 --open",
     "build": "parcel build",
-    "typecheck": "npx tsc",
     "checkformat": "prettier --check \"**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
